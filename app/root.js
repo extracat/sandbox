@@ -4,7 +4,7 @@ const user = {
   imageSize: 90,
 };
 
-export default function Root() {
+export function Root() {
   return (
     <>
       <h1>{user.name}</h1>
