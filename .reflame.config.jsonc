@@ -18,7 +18,7 @@
   // Reflame will use this to keep your app up to date as we make improvements.
   "foundation": {
     "name": "just-react",
-    "version": 2,
+    "version": 2
   },
 
   // NPM packages listed here will be installed by Reflame every time you update this file.
@@ -29,5 +29,5 @@
   "npmPackages": {
     // // Specify npm packages in the same format as you would with package.json
     // "framer-motion": "^6.2.8",
-  },
+  }
 }
