@@ -1,7 +1,7 @@
 const user = {
-  name: 'Hedy Lamarr',
+  name: 'Hedy Lamar',
   imageUrl: 'https://i.imgur.com/yXOvdOSs.jpg',
-  imageSize: 80,
+  imageSize: 100,
 };
 
 export function Root() {
