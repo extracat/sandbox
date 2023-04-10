@@ -1,24 +1,26 @@
+'use strict';
 const gulp = require('gulp');
-const sass = require('gulp-sass');
+const { series, parallel } = require('gulp');
+const sass = require('gulp-sass')(require('sass'));
 
-gulp.task('styles', () => {
-    return gulp.src('./src/style/**/*.scss')
-        .pipe(sass().on('error', sass.logError))
-        .pipe(gulp.dest('./app/'));
-});
+function styles() {
+  return gulp.src('./src/**/*.scss')
+    .pipe(sass().on('error', sass.logError))
+    .pipe(gulp.dest('./app'));
+};
 
-gulp.task('clean', () => {
-    return del([
-        './app/global.css',
-    ]);
-});
+function watch() {
+  gulp.watch('./src/**/*.scss', styles);
+};
 
-gulp.task('watch', () => {
-  gulp.watch('./src/style/**/*.scss', (done) => {
-      gulp.series(['clean', 'styles'])(done);
-  });
-});
 
-gulp.task('build', gulp.series(['clean', 'styles']));
-
-gulp.task('dev', gulp.series(['build']));
+exports.dev = series(
+  //clean,
+  parallel(
+    styles,
+    //series(jsTranspile, jsBundle),
+  ),
+  //parallel(cssMinify, jsMinify),
+  //publish,
+  watch
+);
