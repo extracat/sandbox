@@ -1,5 +1,5 @@
 const user = {
-  name: 'Hedy Lamar',
+  name: 'Hedy Lamarr',
   imageUrl: 'https://i.imgur.com/yXOvdOSs.jpg',
   imageSize: 80,
 };
