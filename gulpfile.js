@@ -1,16 +1,15 @@
 const gulp = require('gulp');
 const sass = require('gulp-sass');
-const del = require('del');
 
 gulp.task('styles', () => {
     return gulp.src('./src/style/**/*.scss')
         .pipe(sass().on('error', sass.logError))
-        .pipe(gulp.dest('./app/css/'));
+        .pipe(gulp.dest('./app/'));
 });
 
 gulp.task('clean', () => {
     return del([
-        './app/css/main.css',
+        './app/global.css',
     ]);
 });
 
